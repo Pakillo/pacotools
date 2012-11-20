@@ -1,0 +1,16 @@
+Package: pacotools
+Type: Package
+Title: Miscellaneous tools I often need and forget about
+Version: 1.0
+Date: 2012-11-10
+Author: Paco
+Maintainer: Paco <fr286@cam.ac.uk>
+Description: An attempt to stop reinventing the wheel every monday
+License: No idea. Just for private use...
+Imports:
+    arm,
+    PredictABEL
+Collate:
+    'checkLogisticReg.R'
+    'syncpackages.R'
+    'packagedoc.R'
