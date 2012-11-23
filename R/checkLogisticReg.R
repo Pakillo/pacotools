@@ -3,15 +3,15 @@
 #' \code{checkLogisticReg} performs several tests and plots of goodness of fit and residuals
 #' of a logistic regression model
 #' 
+#' @export
 #' @param obs numeric vector with observations (either 0 or 1)
 #' @param pred numeric vector (same length as obs) with fitted model probabilities
-#' @param covs Optional. A list of one or more numeric vectors that were used as covariates in the model
+#' @param covs Optional. A named list of one or more numeric vectors that were used as covariates in the model
 #' @param axes.range range of the axes (xlim, ylim)
 #' @param ... further arguments passed to \code{\link{plotCalibration}} function from package "PredictABEL"
 #' @return several plots and quantities
 #' @references Gelman & Hill (2007)
-#' @export
-#' @seealso \code{\link{binnedplot}}, \code{\link{plotCalibration}}
+#' @seealso \code{\link{binnedplot}}, \code{\link{plotCalibration}}, \code{\link{performance}}
 
 checkLogisticReg <- function(obs, pred, covs=NULL, axes.range=c(0,1), ...){
   
@@ -26,6 +26,15 @@ checkLogisticReg <- function(obs, pred, covs=NULL, axes.range=c(0,1), ...){
   cat("\n The error rate is ", error.rate, "\n", 
     "The error rate of the null model is ", error.null, "\n \n")
   
+  # AUC & ROC CURVES
+  auc.pre <- prediction(pred, obs)
+  roc <- performance(auc.pre, measure="tpr", x.measure="fpr")
+  cat("PLOTTING THE ROC CURVE... \n")
+  plot(roc)
+  auc <- performance(auc.pre, "auc")
+  cat("THE AUC IS ", print(auc@y.values[[1]]), "\n")
+  
+  
   
   # calculate residuals
   resid <- obs - pred
@@ -38,7 +47,7 @@ checkLogisticReg <- function(obs, pred, covs=NULL, axes.range=c(0,1), ...){
   if (!is.null(covs)){
     cat("PLOTTING RESIDUALS VERSUS PREDICTORS... \n")
     for (i in 1:length(covs)){
-      binnedplot(covs[[i]], resid, xlab="Predictor values", 
+      binnedplot(covs[[i]], resid, xlab=names(covs)[i], 
                  main="Predictor vs residuals")
     }    
   }

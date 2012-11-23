@@ -1,4 +1,8 @@
 export(checkLogisticReg)
+export(plotReg)
+export(savepdf)
 export(syncpackages)
 import(arm)
 import(PredictABEL)
+import(RColorBrewer)
+import(ROCR)

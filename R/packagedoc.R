@@ -4,7 +4,7 @@
 #'
 #' @docType package
 #' @name pacotools
-#' @import arm PredictABEL
+#' @import arm PredictABEL ROCR RColorBrewer
 #' @author Paco, with some functions collected from different authors
 #' @keywords package
 #' @seealso \code{arm} package

@@ -9,8 +9,12 @@ Description: An attempt to stop reinventing the wheel every monday
 License: No idea. Just for private use...
 Imports:
     arm,
-    PredictABEL
+    PredictABEL,
+    ROCR,
+    RColorBrewer
 Collate:
     'checkLogisticReg.R'
     'syncpackages.R'
     'packagedoc.R'
+    'plotReg.R'
+    'savepdfSmallMarg.R'

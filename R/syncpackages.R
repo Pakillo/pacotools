@@ -7,7 +7,7 @@
 #' @param path folder path containing R packages (e.g. "E:/backup.XPS8300/")
 #' @return New packages will be installed and updated
 #' @export
-#' @author Adapted from function \code{instant_pkgs} by Kay Cichini
+#' @author Paco, adapted from function \code{instant_pkgs} by Kay Cichini
 
 
 syncpackages <- function(path){
