@@ -1,20 +1,21 @@
 Package: pacotools
 Type: Package
 Title: Miscellaneous tools I often need and forget about
-Version: 1.0
-Date: 2012-11-10
+Version: 1.1
+Date: 2012-11-23
 Author: Paco
 Maintainer: Paco <fr286@cam.ac.uk>
 Description: An attempt to stop reinventing the wheel every monday
 License: No idea. Just for private use...
 Imports:
     arm,
-    PredictABEL,
-    ROCR,
     RColorBrewer
 Collate:
-    'checkLogisticReg.R'
     'syncpackages.R'
     'packagedoc.R'
     'plotReg.R'
     'savepdfSmallMarg.R'
+    'auc.R'
+    'checkLogReg.R'
+    'gfitLogReg.R'
+    'getcolours.R'

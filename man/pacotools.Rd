@@ -1,0 +1,18 @@
+\docType{package}
+\name{pacotools}
+\alias{pacotools}
+\alias{pacotools-package}
+\title{A collection of miscellaneous tools I often need and forget about}
+\description{
+  More generally, an attempt to stop reinventing the wheel
+  every monday
+}
+\author{
+  Paco, with some functions collected from different
+  authors
+}
+\seealso{
+  \code{arm} package
+}
+\keyword{package}
+

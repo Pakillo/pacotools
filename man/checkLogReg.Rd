@@ -1,0 +1,54 @@
+\name{checkLogReg}
+\alias{checkLogReg}
+\title{Logistic regression model checks}
+\usage{
+  checkLogReg(obs, pred, covs = NULL, ...)
+}
+\arguments{
+  \item{obs}{numeric vector with observations (either 0 or
+  1)}
+
+  \item{pred}{numeric vector (same length as obs) with
+  fitted model probabilities}
+
+  \item{covs}{Optional. A named list of one or more numeric
+  vectors that were used as covariates in the model}
+
+  \item{...}{further arguments passed to
+  \code{\link{gfitLogReg}}, such as \code{groups} number of
+  bins or \code{print.table} Logical. Print table with
+  numeric results or just make a plot? Default is FALSE.}
+}
+\value{
+  several plots and quantities
+}
+\description{
+  \code{checkLogReg} is a wrapper of other functions
+  (\code{\link{auc}, \link{binnedplot}, \link{gfitLogReg}})
+  to perform several tests and plots of goodness of fit and
+  residuals from a logistic regression model
+}
+\examples{
+# Generate some data
+x <- seq(1:1000)
+yhat <- plogis(0.2 + 0.003*x)   # inverse logit
+y <- rbinom(1000, 1, yhat)
+
+# Fit model and get predicted probabilities
+model <- glm(y~x, family="binomial")
+ypred <- predict(model, type="response")
+
+checkLogReg(y, ypred)
+checkLogReg(y, ypred, covs=list(predictor=x))
+}
+\author{
+  Paco
+}
+\references{
+  Gelman & Hill (2007)
+}
+\seealso{
+  \code{\link{binnedplot}}, \code{\link{plotCalibration}},
+  \code{\link{auc}}
+}
+

@@ -2,6 +2,8 @@
 #' 
 #' This function takes a list of installed packages (e.g. from a backup folder)
 #' and check that all those packages are installed and updated in this computer.
+#' Note that only packages available in CRAN are installed or updated (that is,
+#' packages installed from compressed file, github or r-forge will not be included!)
 #'
 #' 
 #' @param path folder path containing R packages (e.g. "E:/backup.XPS8300/")
@@ -19,4 +21,8 @@ syncpackages <- function(path){
     install.packages(pkgs_miss, dependencies=T)
   }
   update.packages(checkBuilt=T, ask=F)
+  
+  # Print names of packages NOT updated/installed
+  pkgs_unavail <- pkgs[which(!pkgs %in% installed.packages()[, 1])]
+  cat("The following packages could not be updated or installed as they were not available in CRAN: ", pkgs_unavail)
 }

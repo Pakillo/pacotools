@@ -1,0 +1,26 @@
+\name{syncpackages}
+\alias{syncpackages}
+\title{Synchronise installed packages between different computers}
+\usage{
+  syncpackages(path)
+}
+\arguments{
+  \item{path}{folder path containing R packages (e.g.
+  "E:/backup.XPS8300/")}
+}
+\value{
+  New packages will be installed and updated
+}
+\description{
+  This function takes a list of installed packages (e.g.
+  from a backup folder) and check that all those packages
+  are installed and updated in this computer. Note that
+  only packages available in CRAN are installed or updated
+  (that is, packages installed from compressed file, github
+  or r-forge will not be included!)
+}
+\author{
+  Paco, adapted from function \code{instant_pkgs} by Kay
+  Cichini
+}
+

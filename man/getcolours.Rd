@@ -1,0 +1,39 @@
+\name{getcolours}
+\alias{getcolours}
+\title{Getcolours: choosing colours visually}
+\usage{
+  getcolours(n)
+}
+\arguments{
+  \item{n}{Number of colours.}
+}
+\description{
+  Choose colours for plotting directly from a plot.
+}
+\examples{
+set.seed(1111)
+n <- 100
+x <- seq(n)
+y1 <- cumsum(rnorm(n))
+y2 <- cumsum(rnorm(n))
+y3 <- cumsum(rnorm(n))
+y4 <- cumsum(rnorm(n))
+
+ylim <- range(c(y1,y2,y3,y4))
+
+COLS <- getcolours(4)
+
+x11()
+plot(x, y1, ylim=ylim, t="l", col=COLS[1], lwd=3, ylab="")
+lines(x, y2, col=COLS[2], lwd=3)
+lines(x, y3, col=COLS[3], lwd=3)
+lines(x, y4, col=COLS[4], lwd=3)
+legend("topleft", legend=paste("y", 1:4, sep=""), col=COLS, lwd=3)
+}
+\author{
+  Me nugget (http://menugget.blogspot.co.uk/)
+}
+\seealso{
+  \link{http://menugget.blogspot.co.uk/2013/01/choosing-colors-visually-with-getcolors.html}
+}
+
