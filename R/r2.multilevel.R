@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 #' TODO: 
 #' complete examples
 #' 
 #' 
+=======
+>>>>>>> 80c14f0033ce77e6358ba2ed83bdc7321eca62f6
 #' Calculate marginal and conditional R squared (R2) for a multilevel/hierarchical model following Nakagawa & Schielzeth (2013)
 #' 
 #' This function calculates the marginal (fixed effects only) and conditional (including both fixed and random effects) R-squared
@@ -30,7 +33,11 @@
 #' 
 #'  
 #' ####################################################
+<<<<<<< HEAD
 #' # Data generation (Taken from Nakagawa & Schielzeth (2013))
+=======
+#' Data generation (Taken from Nakagawa & Schielzeth (2013))
+>>>>>>> 80c14f0033ce77e6358ba2ed83bdc7321eca62f6
 #' ###################################################
 #' 
 #' # 1. Design matrices 
@@ -103,7 +110,11 @@
 #'   
 #'   
 #' ############################################
+<<<<<<< HEAD
 #' # RUNNING MODELS
+=======
+#' RUNNING MODELS
+>>>>>>> 80c14f0033ce77e6358ba2ed83bdc7321eca62f6
 #' ############################################
 #' 
 #' ## BINOMIAL EXAMPLE (logit)
@@ -115,7 +126,12 @@
 #' fixed.p <- fixef(model)[-1]   # intercept removed
 #' random.p <- c(VarCorr(model)$Container[1], VarCorr(model)$Population[1])
 #' 
+<<<<<<< HEAD
 #' r2 <- r2.multilevel(distrib="logit", fixed.params=fixed.p, predictors=cbind(Data$Treatment, Data$Habitat), random.vars=random.p)
+=======
+#' r2 <- r2.multilevel(distrib="logit", fixed.params=fixed.p, predictors=cbind(Data$Treatment, Data$Habitat),
+#' random.vars=random.p)
+>>>>>>> 80c14f0033ce77e6358ba2ed83bdc7321eca62f6
 #' 
 #' 
 
@@ -134,6 +150,7 @@ r2.multilevel <- function(distrib, fixed.params, predictors, random.vars, resid.
   if (distrib=="logit") resid.var <- 0
     
   # distribution-specific variance
+<<<<<<< HEAD
   if (distrib=="logit" | distrib=="logitprop") distrib.var <- (pi^2)/3
   if (distrib == "poisson") distrib.var <- log(1 + 1/exp(intercept))
   
@@ -144,6 +161,18 @@ r2.multilevel <- function(distrib, fixed.params, predictors, random.vars, resid.
   cond.r2 <- (varF + sum(random.vars)) / (varF + sum(random.vars) + resid.var + distrib.var)
   
   r2 <- matrix(c(marg.r2, cond.r2), 1, 2, byrow=T)
+=======
+  if (distrib=="logit" | distrib=="logitprop") distrib.var <- pi^2/3
+  if (distrib == "poisson") distrib.var <- log(1 + 1/exp(intercept))
+  
+  # marginal R2
+  marg.r2 <- varF / (varF + random.vars + resid.var + distrib.var)
+  
+  # conditional R2
+  cond.r2 <- (varF + random.vars) / (varF + random.vars + resid.var + distrib.var)
+  
+  r2 <- matrix(c(marg.r2, cond.r2), 1, 2)
+>>>>>>> 80c14f0033ce77e6358ba2ed83bdc7321eca62f6
   colnames(r2) <- c("marginal R2", "conditional R2")
   
   print(r2)
