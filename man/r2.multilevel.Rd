@@ -1,11 +1,6 @@
 \name{r2.multilevel}
 \alias{r2.multilevel}
-<<<<<<< HEAD
-\title{TODO:
-complete examples}
-=======
 \title{Calculate marginal and conditional R squared (R2) for a multilevel/hierarchical model following Nakagawa & Schielzeth (2013)}
->>>>>>> 80c14f0033ce77e6358ba2ed83bdc7321eca62f6
 \usage{
   r2.multilevel(distrib, fixed.params, predictors,
     random.vars, resid.var, intercept)
@@ -39,32 +34,20 @@ complete examples}
   conditional r-squared
 }
 \description{
-<<<<<<< HEAD
-  Calculate marginal and conditional R squared (R2) for a
-  multilevel/hierarchical model following Nakagawa &
-  Schielzeth (2013)
-}
-\details{
-=======
->>>>>>> 80c14f0033ce77e6358ba2ed83bdc7321eca62f6
-  This function calculates the marginal (fixed effects
-  only) and conditional (including both fixed and random
-  effects) R-squared of a multilevel/hierarchical model
-  following Nakagawa & Schielzeth (2013) (see
-  \code{References}). Unlike \code{\link{r.squaredGLMM}} in
-  package \code{MuMIn}, this function can be applied to the
-  output of Bayesian hierarchical models as fitted e.g. in
-  JAGS or STAN. Parameter estimates (variances) need then
-  to be provided instead of being extracted directly from
-  the model.
+  This function calculates the margil (fixed effects only)
+  and conditional (including both fixed and random effects)
+  R-squared of a multilevel/hierarchical model following
+  Nakagawa & Schielzeth (2013) (see \code{References}).
+  Unlike \code{\link{r.squaredGLMM}} in package
+  \code{MuMIn}, this function can be applied to the output
+  of Bayesian hierarchical models as fitted e.g. in JAGS or
+  STAN. Parameter estimates (variances) need then to be
+  provided instead of being extracted directly from the
+  model.
 }
 \examples{
 ####################################################
-<<<<<<< HEAD
 # Data generation (Taken from Nakagawa & Schielzeth (2013))
-=======
-Data generation (Taken from Nakagawa & Schielzeth (2013))
->>>>>>> 80c14f0033ce77e6358ba2ed83bdc7321eca62f6
 ###################################################
 
 # 1. Design matrices
@@ -137,11 +120,7 @@ Data$BodyL <- 15 - 3 * (as.numeric(Sex) - 1) + 0.4 * (as.numeric(Treatment) - 1)
 
 
 ############################################
-<<<<<<< HEAD
 # RUNNING MODELS
-=======
-RUNNING MODELS
->>>>>>> 80c14f0033ce77e6358ba2ed83bdc7321eca62f6
 ############################################
 
 ## BINOMIAL EXAMPLE (logit)
@@ -153,12 +132,7 @@ model <- lmer(Colour ~ Treatment + Habitat + (1 | Population) + (1 | Container),
 fixed.p <- fixef(model)[-1]   # intercept removed
 random.p <- c(VarCorr(model)$Container[1], VarCorr(model)$Population[1])
 
-<<<<<<< HEAD
 r2 <- r2.multilevel(distrib="logit", fixed.params=fixed.p, predictors=cbind(Data$Treatment, Data$Habitat), random.vars=random.p)
-=======
-r2 <- r2.multilevel(distrib="logit", fixed.params=fixed.p, predictors=cbind(Data$Treatment, Data$Habitat),
-random.vars=random.p)
->>>>>>> 80c14f0033ce77e6358ba2ed83bdc7321eca62f6
 }
 \author{
   Paco, based on code by Nakagawa & Schielzeth (2013) (see
@@ -174,11 +148,7 @@ random.vars=random.p)
   \code{\link{r2.gelman}} in this same package for Gelman &
   Pardoe's (2006) approach.
 
-<<<<<<< HEAD
   \code{\link{r.squaredGLMM}} in \code{MuMIn} package and
-=======
-  \code{\link{MuMIn::r.squaredGLMM}} and
->>>>>>> 80c14f0033ce77e6358ba2ed83bdc7321eca62f6
   \link{http://jslefche.wordpress.com/2013/03/13/r2-for-linear-mixed-effects-models/}
 }
 
