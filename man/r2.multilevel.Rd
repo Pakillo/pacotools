@@ -46,6 +46,9 @@
   model.
 }
 \examples{
+library(arm)
+
+
 ####################################################
 # Data generation (Taken from Nakagawa & Schielzeth (2013))
 ###################################################

@@ -9,7 +9,8 @@ Description: An attempt to stop reinventing the wheel every monday
 License: No idea. Just for private use...
 Imports:
     arm,
-    RColorBrewer
+    RColorBrewer,
+    Hmisc
 Collate:
     'syncpackages.R'
     'packagedoc.R'

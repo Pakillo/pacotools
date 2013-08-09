@@ -77,11 +77,11 @@ slope.post <- rnorm(nsims, slope, 0.01)
 betamat <- cbind(interc.post, slope.post)
 predmat <- cbind(rep(1,length(xdata)), xdata)
 
-plotReg(xdata, ydata, betamat, predmat)
-plotReg(xdata, ydata, betamat, predmat, spag=F)
-plotReg(xdata, ydata, betamat, predmat, plot.unc=F)
-plotReg(xdata, ydata, betamat, predmat, main="My regression", xlab="My x")    # including graphical parameters
-plotReg(xdata, ydata, betamat, predmat, colour="green")    # specifying colour
+#plotReg(xdata, ydata, betamat, predmat)
+#plotReg(xdata, ydata, betamat, predmat, spag=F)
+#plotReg(xdata, ydata, betamat, predmat, plot.unc=F)
+#plotReg(xdata, ydata, betamat, predmat, main="My regression", xlab="My x")    # including graphical parameters
+#plotReg(xdata, ydata, betamat, predmat, colour="green")    # specifying colour
 
 ## Add another regression lines to the plot
 

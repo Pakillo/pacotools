@@ -24,11 +24,11 @@
 #' 
 #' # Check goodness of fit
 #' gfitLogReg(y, ypred)
-#' gfitLogReg(y, ypred, print.table=T)
+#' gfitLogReg(y, ypred, print.table=TRUE)
 #' gfitLogReg(y, ypred, xlim=c(0.5,1))
 #' gfitLogReg(y, ypred, groups=5)
 
-gfitLogReg <- function (obs, pred, groups, print.table=F,
+gfitLogReg <- function (obs, pred, groups, print.table=FALSE,
                         main="Goodness of fit", xlab="Observations", ylab="Predictions", xlim=c(0,1),
                         pch = 16, ps = 2, cex.lab = 1.2, cex.axis = 1.1, las = 1, ...) 
 { 
