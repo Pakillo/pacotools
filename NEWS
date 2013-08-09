@@ -1,3 +1,8 @@
+pacotools 1.2
+=============
+
+* New function added: r2.multilevel, to calculate R-squared of multilevel models
+
 pacotools 1.1
 =============
 

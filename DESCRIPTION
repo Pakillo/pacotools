@@ -1,8 +1,8 @@
 Package: pacotools
 Type: Package
 Title: Miscellaneous tools I often need and forget about
-Version: 1.1
-Date: 2012-11-23
+Version: 1.2
+Date: 2013-08-08
 Author: Paco
 Maintainer: Paco <fr286@cam.ac.uk>
 Description: An attempt to stop reinventing the wheel every monday
@@ -19,3 +19,5 @@ Collate:
     'checkLogReg.R'
     'gfitLogReg.R'
     'getcolours.R'
+    'r2.multilevel.R'
+    'r2.gelman.R'

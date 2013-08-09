@@ -4,3 +4,5 @@
 pacotools.Rproj
 Read-and-delete-me
 .Rbuildignore
+README.rmd
+README.html
