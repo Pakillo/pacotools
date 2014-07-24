@@ -1,0 +1,119 @@
+---
+
+title: "My title"
+
+author: F. Rodriguez-Sanchez
+          
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+
+#bibliography: references.bib
+#csl: ecology.csl
+#documentclass: article
+fontsize: 11pt
+
+output:
+  html_document:
+    self_contained: true
+    theme: flatly
+    highlight: default
+    toc: false
+    toc_depth: 3
+    keep_md: false
+    fig_height: 7
+    fig_width: 9
+    fig_caption: true
+
+#  pdf_document: 
+#    toc: false
+#    toc_depth: 2
+#    number_sections: false
+#    fig_width: 9
+#    fig_height: 7
+#    fig_crop: true
+#    fig_caption: true
+
+#  word_document:
+#    fig_width: 5
+#    fig_height: 4
+#    fig_caption: true
+        
+---
+
+
+```{r setup, include=FALSE, cache=FALSE}
+
+library("knitr")
+
+### Chunk options ###
+
+## Text results
+opts_chunk$set(echo = TRUE, warning=TRUE, message=TRUE)
+
+## Code decoration
+opts_chunk$set(tidy=TRUE, comment = NA, highlight = TRUE)
+
+## Cache
+opts_chunk$set(cache = 2, cache.path = "output/cache/")
+opts_chunk$set(cache.extra = rand_seed)
+
+## Plots
+opts_chunk$set(fig.path = "output/figures/")
+opts_chunk$set(dpi = 300, fig.align = "default")   # may want 'center' sometimes
+
+# Figure format
+#opts_chunk$set(dev='pdf')
+opts_chunk$set(dev='png')   # choose this one for HTML or markdown output? Or 'svg'
+# may include dev.args as a list... see knitr help
+
+def.par <- par(no.readonly = TRUE)
+
+
+
+
+### Hooks ###
+
+## Crop plot margins
+knit_hooks$set(crop = hook_pdfcrop)   # requires dev="pdf"
+
+
+
+```
+
+
+```{r libraries, include=FALSE}
+
+library(knitcitations)
+
+```
+
+
+## Introduction
+
+Rmarkdown is great...
+
+
+## Methods
+
+
+## Results
+
+
+## Discussion
+
+
+## References
+
+```{r references, echo=FALSE, eval=FALSE}
+#citet(citation("knitr")) # a citation that wasn't added dyanmically above
+#write.bibtex(file="references.bib")
+# see http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html
+```
+
+
+
+```{r sessionInfo, echo=FALSE, eval=TRUE}
+sessionInfo()
+```
+
+
+
