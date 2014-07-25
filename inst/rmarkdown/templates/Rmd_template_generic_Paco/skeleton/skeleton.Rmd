@@ -1,15 +1,12 @@
 ---
-
 title: "My title"
 
-author: F. Rodriguez-Sanchez
+author: Your name
           
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 
-#bibliography: references.bib
-#csl: ecology.csl
-#documentclass: article
-fontsize: 11pt
+bibliography: references.bib
+#csl: bibliostyle.csl
 
 output:
   html_document:
@@ -22,29 +19,18 @@ output:
     fig_height: 7
     fig_width: 9
     fig_caption: true
-
-#  pdf_document: 
-#    toc: false
-#    toc_depth: 2
-#    number_sections: false
-#    fig_width: 9
-#    fig_height: 7
-#    fig_crop: true
-#    fig_caption: true
-
-#  word_document:
-#    fig_width: 5
-#    fig_height: 4
-#    fig_caption: true
-        
+    
 ---
 
 
-```{r setup, include=FALSE, cache=FALSE}
+```{r knitr_setup, include=FALSE, cache=FALSE}
 
-library("knitr")
+library(rmarkdown)
+library(knitr)
 
 ### Chunk options ###
+
+# Modify at your will #
 
 ## Text results
 opts_chunk$set(echo = TRUE, warning=TRUE, message=TRUE)
@@ -61,59 +47,58 @@ opts_chunk$set(fig.path = "output/figures/")
 opts_chunk$set(dpi = 300, fig.align = "default")   # may want 'center' sometimes
 
 # Figure format
-#opts_chunk$set(dev='pdf')
-opts_chunk$set(dev='png')   # choose this one for HTML or markdown output? Or 'svg'
-# may include dev.args as a list... see knitr help
-
-def.par <- par(no.readonly = TRUE)
-
-
-
-
-### Hooks ###
-
-## Crop plot margins
-knit_hooks$set(crop = hook_pdfcrop)   # requires dev="pdf"
-
+opts_chunk$set(dev='png')  # e.g. choose among 'pdf', 'png', 'svg'...
+# may include specific dev.args as a list... see knitr help
 
 
 ```
 
 
-```{r libraries, include=FALSE}
+```{r citations_setup, include=FALSE, cache=FALSE}
 
 library(knitcitations)
+cleanbib()   
+cite_options(citation_format = "pandoc")
+
+if (file.exists("references.bib")) 
+  refs_from_file <- read.bibtex("references.bib", check=FALSE)
 
 ```
 
 
-## Introduction
-
-Rmarkdown is great...
 
 
-## Methods
+## Your text, code, plots here
+
+Rmarkdown is great `r citep(citation("knitr"))`. 
+
+You can write all your R code in chunks here and the output will appear in the final document. For example:
+
+```{r test, echo=FALSE, cache=FALSE}
+cat("Hello world!")
+```
 
 
-## Results
+If you put a BibTeX file with references ("references.bib") in the working directory, you can cite any of them like these: @Xie_2013. Or cite by doi, e.g. `r citet("10.1098/rspb.2013.1372")`, thanks to `knitcitations` package `r citep(citation("knitcitations"))`. 
+
+You can even specifiy the desired format for your bibliography by including a style file ("bibliostyle.csl"). See [Rstudio website](http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html) for more help. You can grab many different bibliography styles here: http://citationstyles.org/.
+
+There is a chunk in the end to provide your session info at the end of the document (useful for reproducibility). Set eval=FALSE if you don't want to include that info in your document.
 
 
-## Discussion
+```{r sessionInfo, cache=FALSE, echo=FALSE, eval=FALSE}
+sessionInfo()
+```
 
 
 ## References
 
-```{r references, echo=FALSE, eval=FALSE}
-#citet(citation("knitr")) # a citation that wasn't added dyanmically above
-#write.bibtex(file="references.bib")
-# see http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html
+```{r generate_references, cache=FALSE, include=FALSE, results='hide'}
+write.bibtex(file="references.bib", append=file.exists("references.bib"))
+
 ```
 
 
-
-```{r sessionInfo, echo=FALSE, eval=TRUE}
-sessionInfo()
-```
 
 
 
