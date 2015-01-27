@@ -6,7 +6,7 @@
 #' @name pacotools
 #' @import arm RColorBrewer
 #' @importFrom Hmisc cut2
-#' @author Paco, with some functions collected from different authors
+#' @author F. Rodriguez-Sanchez, with some functions collected from different authors
 #' @keywords package
 #' @seealso \code{arm} package
 #' 
