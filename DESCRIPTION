@@ -1,8 +1,8 @@
 Package: pacotools
 Type: Package
 Title: Miscellaneous tools I often need and forget about
-Version: 1.5
-Date: 2015-01-27
+Version: 1.6
+Date: 2015-02-18
 Author: F. Rodriguez-Sanchez. May contain code from other authors (see author
     field in particular functions)
 Maintainer: F. Rodriguez-Sanchez <f.rodriguez.sanc@gmail.com>
