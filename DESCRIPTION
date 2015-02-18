@@ -1,7 +1,7 @@
 Package: pacotools
 Type: Package
 Title: Miscellaneous tools I often need and forget about
-Version: 1.6
+Version: 1.7
 Date: 2015-02-18
 Author: F. Rodriguez-Sanchez. May contain code from other authors (see author
     field in particular functions)
