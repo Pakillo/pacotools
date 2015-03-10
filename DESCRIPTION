@@ -11,5 +11,10 @@ Description: A collection of handy/useful functions. An attempt to stop
 License: No idea. Just for private use...
 Imports:
     arm,
+    ggplot2,
+    grid,
+    Hmisc,
+    qdap,
     RColorBrewer,
-    Hmisc
+    RCurl
+    
