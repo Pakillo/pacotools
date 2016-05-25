@@ -11,7 +11,6 @@
 #' @note This function has been taken from archived package \code{metrumrg} where it was named \code{shuffle}.
 #' @seealso \link{https://github.com/cran/metrumrg/blob/master/R/shuffle.R}.
 #' @return A data frame with shuffled columns.
-#' @aliases <may delete this line>
 #' @examples \dontrun{
 #' data(iris)
 #' iris.new <- move_columns(iris, "Species", after = NA) # move species to first column

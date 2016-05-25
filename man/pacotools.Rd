@@ -11,8 +11,5 @@ More generally, an attempt to stop reinventing the wheel every monday
 \author{
 F. Rodriguez-Sanchez, with some functions collected from different authors
 }
-\seealso{
-\code{arm} package
-}
 \keyword{package}
 
