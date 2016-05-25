@@ -4,6 +4,8 @@
 #' perform several tests and plots of goodness of fit and residuals from a logistic regression model
 #' 
 #' @export
+#' @importFrom SDMTools auc
+#' @importFrom arm binnedplot
 #' @author Paco
 #' @param obs numeric vector with observations (either 0 or 1)
 #' @param pred numeric vector (same length as obs) with fitted model probabilities
@@ -41,7 +43,7 @@ checkLogReg <- function(obs, pred, covs=NULL, ...){
     "The error rate of the null model is ", error.null, "\n \n")
   
   # AUC & ROC CURVES
-  cat("THE AUC IS ", auc(obs, pred), "\n")
+  cat("THE AUC IS ", SDMTools::auc(obs, pred), "\n")
   
   # calculate residuals
   resid <- obs - pred
@@ -49,12 +51,12 @@ checkLogReg <- function(obs, pred, covs=NULL, ...){
   # plot residuals vs fitted values
   # require(arm)
   cat("PLOTTING RESIDUALS VERSUS FITTED VALUES... \n")
-  binnedplot(pred, resid)
+  arm::binnedplot(pred, resid)
   
   if (!is.null(covs)){
     cat("PLOTTING RESIDUALS VERSUS PREDICTORS... \n")
     for (i in 1:length(covs)){
-      binnedplot(covs[[i]], resid, xlab=names(covs)[i], 
+      arm::binnedplot(covs[[i]], resid, xlab=names(covs)[i], 
                  main="Predictor vs residuals")
     }    
   }

@@ -4,6 +4,7 @@
 #' numerical results (including a chi-squared test) can be produced.
 #' 
 #' @export
+#' @importFrom Hmisc cut2
 #' @author Paco, based on function \code{plotCalibration} from package \code{PredictABEL}.
 #' @return A goodness of fit plot. Optionally (if \code{print.table=T}), also a table. See \code{plotCalibration} from package \code{PredictABEL}.
 #' @seealso \code{plotCalibration} from package \code{PredictABEL}
@@ -62,7 +63,7 @@ gfitLogReg <- function (obs, pred, groups, print.table=FALSE,
          las = las, ...)
     lines(x = c(0, 1), y = c(0, 1))
     
-    if (print.table==T){
+    if (print.table){
       contr <- ((observed - predicted)^2)/(total * meanpred * 
                                              (1 - meanpred))
       chisqr <- sum(contr)

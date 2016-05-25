@@ -1,3 +1,18 @@
+pacotools 1.8.1
+===============
+
+* Removed old & now unnecessary functions: 
+  - auc: now imported from SDMTools package
+  - roxytemplate: Rstudio now has that functionality
+  - words_chars: use wordcountaddin
+  
+
+
+pacotools 1.8
+=============
+
+* Added calculate_cover function to calculate plant cover in vegetation transects.
+
 pacotools 1.7
 =============
 

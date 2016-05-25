@@ -1,8 +1,8 @@
 Package: pacotools
 Type: Package
 Title: Miscellaneous tools I often need and forget about
-Version: 1.7.1
-Date: 2015-06-15
+Version: 1.8.1
+Date: 2016-05-25
 Author: F. Rodriguez-Sanchez. May contain code from other authors (see author
     field in particular functions)
 Maintainer: F. Rodriguez-Sanchez <f.rodriguez.sanc@gmail.com>
@@ -14,6 +14,6 @@ Imports:
     ggplot2,
     grid,
     Hmisc,
-    qdap,
-    RColorBrewer
-    
+    RColorBrewer,
+    SDMTools
+RoxygenNote: 5.0.1
