@@ -17,4 +17,6 @@ Imports:
     Hmisc,
     RColorBrewer,
     SDMTools
+Suggests:
+    rio
 RoxygenNote: 5.0.1

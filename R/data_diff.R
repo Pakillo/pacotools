@@ -20,6 +20,16 @@
 #' new <- new[- 4, ]
 #' data_diff(old, new)
 #' 
+#' ## Diff two Excel files
+#' # (or any two files that can be imported by \pkg{rio}) 
+#' \dontrun{
+#' library(rio)
+#' old <- import("old.xls")
+#' new <- import("new.xls")
+#' data_diff(old, new)
+#' }
+#' 
+#' 
 data_diff <- function(old.df, new.df, show.diff = TRUE, file = tempfile(fileext = ".html")){
   
   dif <- daff::diff_data(old.df, new.df)
