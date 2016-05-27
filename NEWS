@@ -1,3 +1,8 @@
+pacotools 1.9.0
+===============
+
+* Added data_diff function to compare two dataframes using daff package.
+
 pacotools 1.8.1
 ===============
 

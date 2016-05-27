@@ -1,8 +1,8 @@
 Package: pacotools
 Type: Package
 Title: Miscellaneous tools I often need and forget about
-Version: 1.8.1
-Date: 2016-05-25
+Version: 1.9.0
+Date: 2016-05-27
 Author: F. Rodriguez-Sanchez. May contain code from other authors (see author
     field in particular functions)
 Maintainer: F. Rodriguez-Sanchez <f.rodriguez.sanc@gmail.com>
@@ -11,6 +11,7 @@ Description: A collection of handy/useful functions. An attempt to stop
 License: No idea. Just for private use...
 Imports:
     arm,
+    daff,
     ggplot2,
     grid,
     Hmisc,
