@@ -4,14 +4,13 @@
 #' 
 #' @param old.df Old dataframe
 #' @param new.df New dataframe (to evaluate changes compared to old.df).
-#' @param show.diff Logical. If TRUE (default), show data diff as HTML. 
-#' See \code{\link[daff]{render_diff}} for more details.
+#' @param output character. \code{view} shows data diff as HTML (see \code{\link[daff]{render_diff}}). 
+#' \code{data.frame} returns a data.frame (useful for knitting, see examples).
 #' @param file Character. Path to save diff results in a HTML file (optional).
-#'
 #' @return A \code{difference} object. See \code{\link[daff]{diff_data}}. Also,
-#' optionally, an HTML file.
+#' optionally, an HTML file or data.frame.
 #' @export
-#' @importFrom daff diff_data render_diff
+#' @importFrom daff diff_data render_diff write_diff
 #'
 #' @examples
 #' old <- iris
@@ -27,14 +26,26 @@
 #' old <- import("old.xls")
 #' new <- import("new.xls")
 #' data_diff(old, new)
+#' 
+#' # Including output in Rmarkdown document:
+#' kable(data_diff(old, new, output = "data.frame"))
 #' }
 #' 
 #' 
-data_diff <- function(old.df, new.df, show.diff = TRUE, file = tempfile(fileext = ".html")){
+data_diff <- function(old.df, new.df, output = c('view', 'data.frame'), file = tempfile(fileext = ".html")){
   
   dif <- daff::diff_data(old.df, new.df)
   
-  if (show.diff) daff::render_diff(dif, file = file)
+  output <- match.arg(output)
+  
+  if (output == 'view') daff::render_diff(dif, file = file, view = TRUE)
+  
+  if (output == 'data.frame'){
+    file = tempfile(fileext = ".csv")
+    write_diff(dif, file)
+    dif <- read.csv(file)
+    names(dif)[1] <- "change"
+  }
   
   invisible(dif)
 }

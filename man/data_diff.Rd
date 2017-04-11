@@ -4,22 +4,22 @@
 \alias{data_diff}
 \title{Diff two dataframes}
 \usage{
-data_diff(old.df, new.df, show.diff = TRUE, file = tempfile(fileext =
-  ".html"))
+data_diff(old.df, new.df, output = c("view", "data.frame"),
+  file = tempfile(fileext = ".html"))
 }
 \arguments{
 \item{old.df}{Old dataframe}
 
 \item{new.df}{New dataframe (to evaluate changes compared to old.df).}
 
-\item{show.diff}{Logical. If TRUE (default), show data diff as HTML. 
-See \code{\link[daff]{render_diff}} for more details.}
+\item{output}{character. \code{view} shows data diff as HTML (see \code{\link[daff]{render_diff}}). 
+\code{data.frame} returns a data.frame (useful for knitting, see examples).}
 
 \item{file}{Character. Path to save diff results in a HTML file (optional).}
 }
 \value{
 A \code{difference} object. See \code{\link[daff]{diff_data}}. Also,
-optionally, an HTML file.
+optionally, an HTML file or data.frame.
 }
 \description{
 Compare two dataframes using \pkg{daff} package.
@@ -38,6 +38,9 @@ library(rio)
 old <- import("old.xls")
 new <- import("new.xls")
 data_diff(old, new)
+
+# Including output in Rmarkdown document:
+kable(data_diff(old, new, output = "data.frame"))
 }
 
 
