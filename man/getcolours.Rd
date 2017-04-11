@@ -32,10 +32,9 @@ lines(x, y3, col=COLS[3], lwd=3)
 lines(x, y4, col=COLS[4], lwd=3)
 legend("topleft", legend=paste("y", 1:4, sep=""), col=COLS, lwd=3)
 }
-\author{
-Me nugget (http://menugget.blogspot.co.uk/)
-}
 \seealso{
 \link{http://menugget.blogspot.co.uk/2013/01/choosing-colors-visually-with-getcolors.html}
 }
-
+\author{
+Me nugget (http://menugget.blogspot.co.uk/)
+}

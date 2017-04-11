@@ -12,4 +12,3 @@ More generally, an attempt to stop reinventing the wheel every monday
 F. Rodriguez-Sanchez, with some functions collected from different authors
 }
 \keyword{package}
-

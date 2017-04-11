@@ -83,4 +83,3 @@ ypred <- predict(model, type="response")
 \author{
 Paco, based on code by Lucas Leeman (see \link{http://andrewgelman.com/2012/08/graphs-showing-regression-uncertainty-the-code/})
 }
-

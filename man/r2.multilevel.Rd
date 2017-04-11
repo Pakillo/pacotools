@@ -127,9 +127,6 @@ r2 <- r2.multilevel(distrib="logit", fixed.params=fixed.p, predictors=cbind(Data
 
 
 }
-\author{
-Paco, based on code by Nakagawa & Schielzeth (2013) (see \code{references}).
-}
 \references{
 Nakagawa, S, Schielzeth, H. (2012). A general and simple method for obtaining R2 from
 Generalized Linear Mixed-effects Models. Methods in Ecology and Evolution: (online) doi:10.1111/j.2041-210x.2012.00261.x
@@ -139,4 +136,6 @@ Generalized Linear Mixed-effects Models. Methods in Ecology and Evolution: (onli
 
 \code{\link{r.squaredGLMM}} in \code{MuMIn} package and \link{http://jslefche.wordpress.com/2013/03/13/r2-for-linear-mixed-effects-models/}
 }
-
+\author{
+Paco, based on code by Nakagawa & Schielzeth (2013) (see \code{references}).
+}

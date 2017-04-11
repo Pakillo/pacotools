@@ -42,10 +42,9 @@ gfitLogReg(y, ypred, print.table=TRUE)
 gfitLogReg(y, ypred, xlim=c(0.5,1))
 gfitLogReg(y, ypred, groups=5)
 }
-\author{
-Paco, based on function \code{plotCalibration} from package \code{PredictABEL}.
-}
 \seealso{
 \code{plotCalibration} from package \code{PredictABEL}
 }
-
+\author{
+Paco, based on function \code{plotCalibration} from package \code{PredictABEL}.
+}

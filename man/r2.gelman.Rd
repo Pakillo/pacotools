@@ -22,9 +22,6 @@ A numeric value: the r-squared
 \description{
 This function calculates the R-squared of a multilevel/hierarchical model following Gelman & Pardoe (2006) (see \code{References}).
 }
-\author{
-Paco, based on code by Gelman & Hill (2007) (see \code{references}).
-}
 \references{
 Gelman & Pardoe (2006) Technometrics. Gelman & Hill (2007) book
 }
@@ -33,4 +30,6 @@ Gelman & Pardoe (2006) Technometrics. Gelman & Hill (2007) book
 
 \code{\link{r.squaredGLMM}} in \code{MuMIn} package and \link{http://jslefche.wordpress.com/2013/03/13/r2-for-linear-mixed-effects-models/}
 }
-
+\author{
+Paco, based on code by Gelman & Hill (2007) (see \code{references}).
+}

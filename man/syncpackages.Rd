@@ -21,4 +21,3 @@ packages installed from compressed file, github or r-forge will not be included!
 \author{
 Paco, adapted from function \code{instant_pkgs} by Kay Cichini
 }
-

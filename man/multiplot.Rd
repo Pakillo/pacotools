@@ -65,4 +65,3 @@ multiplot(plotlist = myplots, layout =matrix(c(1,2,3,3), nrow=2),
 \author{
 A. Teucher, borrowed and modified from http://www.cookbook-r.com/Graphs/Multiple_graphs_on_one_page_(ggplot2)/
 }
-

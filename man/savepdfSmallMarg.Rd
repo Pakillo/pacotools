@@ -22,4 +22,3 @@ Save plot as a pdf file with reduced margins (suitable for publication)
 \author{
 Rob Hyndman
 }
-

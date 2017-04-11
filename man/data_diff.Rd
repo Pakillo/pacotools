@@ -45,4 +45,3 @@ kable(data_diff(old, new, output = "data.frame"))
 
 
 }
-

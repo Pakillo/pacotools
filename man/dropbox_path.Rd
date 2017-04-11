@@ -12,4 +12,3 @@ A character vector with the path to the Dropbox folder.
 \description{
 This function returns the full path to the Dropbox folder in the local system.
 }
-

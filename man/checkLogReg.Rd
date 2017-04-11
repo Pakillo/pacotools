@@ -37,13 +37,12 @@ ypred <- predict(model, type="response")
 checkLogReg(y, ypred)
 checkLogReg(y, ypred, covs=list(predictor=x))
 }
-\author{
-Paco
-}
 \references{
 Gelman & Hill (2007)
 }
 \seealso{
 \code{\link{binnedplot}}, \code{\link{plotCalibration}}, \code{\link{auc}}
 }
-
+\author{
+Paco
+}

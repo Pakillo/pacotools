@@ -4,14 +4,16 @@
 \alias{move_columns}
 \title{Move the columns of a dataframe relative to each other.}
 \usage{
-move_columns(x, who, after = NA)
+move_columns(x, who, before = NULL, after = NULL)
 }
 \arguments{
 \item{x}{a dataframe.}
 
 \item{who}{A character vector of column names to move, or a logical vector of length names(x), or a vector of indices}
 
-\item{after}{the column after which to put 'who': may be character, integer, NA, or NULL.}
+\item{before}{the column before which to put \code{who}: may be character, numeric or NA. If NA, the named columns are moved to the front (before the first column).}
+
+\item{after}{the column after which to put \code{who}: may be character, integer, or NA. If NA, the named columns are moved to the end (after the last column).}
 }
 \value{
 A data frame with shuffled columns.
@@ -19,22 +21,20 @@ A data frame with shuffled columns.
 \description{
 Move the columns of a dataframe relative to each other.
 }
-\details{
-If \code{after} is \code{NA}, the named columns are moved to the front (before the first column). If \code{after} has length zero, or is a number less than zero or an integer greater than the number of remaining columns, or is NULL, \code{who} is moved to the end. If \code{after} is an integer less than or equal to the number of remaining columns, \code{who} is placed after the corresponding column.
-}
 \note{
-This function has been taken from archived package \code{metrumrg} where it was named \code{shuffle}.
+This function has been modified from archived package \code{metrumrg} where it was named \code{shuffle}.
 }
 \examples{
 \dontrun{
 data(iris)
-iris.new <- move_columns(iris, "Species", after = NA) # move species to first column
+iris.new <- move_columns(iris, "Species", after = NA) # move species to last column
+iris.new <- move_columns(iris, "Species", after = 2)
+iris.new <- move_columns(iris, "Species", after = "Sepal.Length")
+iris.new <- move_columns(iris, "Species", before = NA) # move species to first column
+iris.new <- move_columns(iris, "Species", before = 3)
+iris.new <- move_columns(iris, "Species", before = "Petal.Length")
 }
-}
-\author{
-Tim Bergsma.
 }
 \seealso{
 \link{https://github.com/cran/metrumrg/blob/master/R/shuffle.R}.
 }
-
