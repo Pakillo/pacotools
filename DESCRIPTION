@@ -1,8 +1,8 @@
 Package: pacotools
 Type: Package
 Title: Miscellaneous tools I often need and forget about
-Version: 1.9.0
-Date: 2016-05-27
+Version: 1.9.2
+Date: 2017-04-11
 Author: F. Rodriguez-Sanchez. May contain code from other authors (see author
     field in particular functions)
 Maintainer: F. Rodriguez-Sanchez <f.rodriguez.sanc@gmail.com>
@@ -19,4 +19,4 @@ Imports:
     SDMTools
 Suggests:
     rio
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
